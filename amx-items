@@ -1,0 +1,21 @@
+
+;; ----- amx-history -----
+(
+ web-mode
+ org-pandoc-export-as-ms
+ org-present
+ org-preview-html-mode
+ ivy-resume
+ eval-buffer
+ cd
+)
+
+;; ----- amx-data -----
+(
+ (eval-buffer . 1)
+ (ivy-resume . 1)
+ (org-preview-html-mode . 3)
+ (org-present . 2)
+ (org-pandoc-export-as-ms . 1)
+ (web-mode . 1)
+)
