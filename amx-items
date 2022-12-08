@@ -2,12 +2,12 @@
 ;; ----- amx-history -----
 (
  web-mode
- org-pandoc-export-as-ms
- org-present
- org-preview-html-mode
  ivy-resume
  eval-buffer
  cd
+ 5x5
+ amx
+ arp
 )
 
 ;; ----- amx-data -----
