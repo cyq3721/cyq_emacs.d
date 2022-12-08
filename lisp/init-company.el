@@ -1,13 +1,16 @@
 (require 'company)
-(require 'flycheck )
-(global-flycheck-mode t)
+;;(require 'flycheck )
+;;(global-flycheck-mode t)
 (require 'yasnippet)
 (company-quickhelp-mode)
-;;(eval-after-load 'company
-;;  '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
+
+(add-hook 'after-init-hook 'global-company-mode)
+
+(eval-after-load 'company
+   '(define-key company-active-map (kbd "C-c h") 'company-quickhelp-manual-begin))
 
 (yas-global-mode 1)
-(global-company-mode t)          ;;开启补全
+(add-hook 'after-init-hook 'global-company-mode)          ;;开启补全
  (setq company-dabbrev-code-everywhere t 
         company-dabbrev-code-modes t 
         company-dabbrev-code-other-buffers 'all 
@@ -15,7 +18,7 @@
         company-dabbrev-ignore-case t 
         company-dabbrev-other-buffers 'all 
         company-require-match nil 
-        company-minimum-prefix-length 2
+        company-minimum-prefix-length 1
         company-show-numbers t 
         company-tooltip-limit 20 
         company-idle-delay 0 

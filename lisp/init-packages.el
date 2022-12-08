@@ -1,34 +1,59 @@
+;;; package --- summary
+;;; commentary:
+;;; code:
 (when (>= emacs-major-version 24)
-     (require 'package)
-     (package-initialize)
-     (setq package-archives '(;;("gnu"   . "http://elpa.emacs-china.org/gnu/")
-			      ;; ("melpa" . "http://elpa.emacs-china.org/melpa/")
-			      ("melpa" . "http://melpa.org/packages/") )))
+  (require 'package)
+  (package-initialize)
+  (setq package-archives '(;;("gnu"   . "http://elpa.emacs-china.org/gnu/")
+			   ;; ("melpa" . "http://elpa.emacs-china.org/melpa/")
+			   ("melpa" . "http://melpa.org/packages/") )))
 
 ;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
 
- ;; cl - Common Lisp Extension
- (require 'cl)
+;; cl - Common Lisp Extension
+(require 'cl-lib)
+(require 'cl)
+
+;;(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
  ;; Add Packages
  (defvar my/packages '(
 		;; --- Auto-completion ---
 		       company
 		       company-quickhelp
-		       ;;company-web
+                       company-jedi
+		       company-web
+                       company-php
+                      
+                       ;lsp-mode
+                       ;lsp-treemacs
+                       ;dap-mode
+                       
+                       ac-php
+                       flymake-php 
+                       php-mode
 		       web-completion-data
 		       which-key
 		       flycheck
+                       tramp
+                       image+
 		       ;; --- Better Editor ---
 		       better-defaults
 		       popwin
+                       mmm-mode
 		hungry-delete
 		swiper
 		counsel
 		smartparens
 		neotree
 		better-defaults
-		
+                session
+                org-bullets
+                embark
+                marginalia
+                browse-kill-ring
+                pdf-tools
+	;;	go-translate
 		;; --- Major Mode ---
 		;;js2-mode
 		use-package
@@ -42,21 +67,27 @@
 		
 		;;=======python环境=================
 		ipython-shell-send
+                exec-path-from-shell
+                pyenv-mode
 		elpy  
 		python-mode
+                
 		py-autopep8
 		blacken
+                virtualenvwrapper
+                anaconda-mode
 		ein     ;;Emacs IPython Notebook
 		;;=================================
 		
 		;; ====== Minor Mode ==============
 		;;nodejs-repl
-		;;exec-path-from-shell
+		
 		;; --- Themes ---
 		monokai-theme
 		solarized-theme
 		melancholy-theme
 		spacemacs-theme
+               
 		zenburn-theme
                 color-theme-sanityinc-tomorrow
 		color-theme-sanityinc-solarized
@@ -66,7 +97,7 @@
  (setq package-selected-packages my/packages)
 
  (defun my/packages-installed-p ()
-     (loop for pkg in my/packages
+     (cl-loop for pkg in my/packages
 	   when (not (package-installed-p pkg)) do (return nil)
 	   finally (return t)))
 

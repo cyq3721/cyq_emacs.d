@@ -3,6 +3,7 @@
 
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)  ;;在lisp模式中'不补全
+
 ;;(sp-local-pair 'lisp-interaction-mode "'" nil :actions nil)
 
 ;; 光标 在括号内时就高亮包含内容的两个括号

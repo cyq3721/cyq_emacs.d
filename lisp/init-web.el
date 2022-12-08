@@ -9,6 +9,7 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.inc\\'" . web-mode))
 
 (add-to-list 'auto-mode-alist '("\\.api\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("/some/react/path/.*\\.js[x]?\\'" . web-mode))
@@ -18,6 +19,8 @@
 
 (setq web-mode-engines-alist
       '(("php"    . "\\.phtml\\'")
+        ("php"    . "\\.tpl\\.php\\'")
+        ("django" . "\\.html\\.twig\\'")
         ("blade"  . "\\.blade\\."))
       )
 
@@ -55,4 +58,13 @@
 (setq web-mode-enable-current-column-highlight t)
 
 ;;(setq web-mode-extra-constants '(("php" . ("CONS1" "CONS2")))
+
+;;add snappet
+(setq web-mode-extra-snippets
+      '(("erb" . (("toto" . "<% toto | %>\n\n<% end %>")))
+        ("php" . (("dowhile" . "<?php do { ?>\n\n<?php } while (|); ?>")
+                  ("debug" . "<?php error_log(__LINE__); ?>")))
+       ))
+
+
 (provide 'init-web)
