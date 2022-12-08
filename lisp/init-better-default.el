@@ -82,7 +82,7 @@
 (setq scroll-margin 3
       scroll-conservatively 10000) 
 
-;;打开最近文件，设置快捷键 c-x c-r
+;打开最近文件，设置快捷键 c-x c-r
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 30)
@@ -95,9 +95,9 @@
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
 ;;--------------------
-(global-set-key (kbd "C-x C-f") 'find-function)
-(global-set-key (kbd "C-x C-v") 'find-variable)
-(global-set-key (kbd "C-x C-k") 'find-function-on-key)
+(global-set-key (kbd "C-h C-f") 'find-function)
+(global-set-key (kbd "C-h C-v") 'find-variable)
+(global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
 
 
