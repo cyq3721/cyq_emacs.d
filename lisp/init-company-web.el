@@ -13,7 +13,7 @@
 ;; you may key bind, for example for web-mode:
 (define-key web-mode-map (kbd "C-'") 'company-web-html)
 
-;; (setq company-minimum-prefix-length 1)            ; WARNING, probably you will get perfomance issue if min len is 0!
+(setq company-minimum-prefix-length 1)            ; WARNING, probably you will get perfomance issue if min len is 0!
 (setq company-tooltip-limit 20)                      ; bigger popup window
 (setq company-tooltip-align-annotations 't)          ; align annotations to the right tooltip border
 (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows

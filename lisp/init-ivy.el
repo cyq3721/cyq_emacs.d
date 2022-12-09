@@ -1,4 +1,6 @@
-;;config swiper
+;;; package --- summary
+;;; commentary:
+;;; code:
 (ivy-mode)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
@@ -15,3 +17,4 @@
 (global-set-key (kbd "<f1> l") 'counsel-find-library)
 
 (provide 'init-ivy)
+;;; init-ivy.el ends here
