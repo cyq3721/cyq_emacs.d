@@ -1,4 +1,6 @@
-
+;;; package --- summary
+;;; commentary:
+;;; code:
 (require 'company)                                   ; load company mode
 (require 'company-web-html)                          ; load company mode html backend
 ;; and/or
@@ -46,4 +48,24 @@
     (t (:inherit company-tooltip-selection)))))
 
 
+(defun my-web-mode-hook ()
+  "Hook for `web-mode'."
+    (set (make-local-variable 'company-backends)
+         '(company-tern company-web-html company-yasnippet company-files)))
+
+(add-hook 'web-mode-hook 'my-web-mode-hook)
+
+;; Enable JavaScript completion between <script>...</script> etc.
+(advice-add 'company-tern :before
+            #'(lambda (&rest _)
+                (if (equal major-mode 'web-mode)
+                    (let ((web-mode-cur-language
+                          (web-mode-language-at-pos)))
+                      (if (or (string= web-mode-cur-language "javascript")
+                              (string= web-mode-cur-language "jsx"))
+                          (unless tern-mode (tern-mode))
+                        (if tern-mode (tern-mode -1)))))))
+
+;; manual autocomplete
+(define-key web-mode-map (kbd "M-SPC") 'company-complete)
 (provide 'init-company-web)

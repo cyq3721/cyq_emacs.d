@@ -11,7 +11,7 @@
 (require 'init-company-php)
 (require 'init-mmm-mode)
 (require 'init-mmm)
-;(require 'init-php.el)
+(require 'init-php)
 ;(require 'init-embark.el)
 (require 'init-neotree)
 ;(require 'init-python.el)

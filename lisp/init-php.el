@@ -5,13 +5,14 @@
 (exec-path-from-shell-initialize)
 
 (require 'flymake-php)
-(add-hook 'php-mode-hook 'flymake-php-load)
+(require 'web-mode)
+(add-hook 'web-mode-hook 'flymake-php-load)
 
 ;;加载flycheck
  (use-package flycheck
   :diminish flycheck-mode
   :hook (after-init . global-flycheck-mode)
-  :custom
+ :custom
   (flycheck-php-executable "/path/to/php")
   )
 
