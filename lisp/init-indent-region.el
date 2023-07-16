@@ -1,3 +1,6 @@
+;;; package --- summary
+;;; commentary:
+;;; code:
 (defun indent-buffer()
   (interactive)
   (indent-region (point-min) (point-max)))
@@ -15,3 +18,4 @@
 
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 (provide 'init-indent-region)
+;;; init-indent-region.el ends here!

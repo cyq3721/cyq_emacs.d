@@ -1,3 +1,6 @@
+;;; package --- summary
+;;; commentary:
+;;; code:
 (require 'web-mode)
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -68,3 +71,4 @@
 
 
 (provide 'init-web)
+;;; init-web.el ends here!

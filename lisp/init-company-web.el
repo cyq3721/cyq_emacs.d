@@ -1,9 +1,10 @@
 ;;; package --- summary
 ;;; commentary:
 ;;; code:
+(require 'web-mode)
 (require 'company)                                   ; load company mode
 (require 'company-web-html)                          ; load company mode html backend
-;; and/or
+(require 'tern)
 (require 'company-web-jade)                          ; load company mode jade backend
 (require 'company-web-slim)                          ; load company
                                         ; mode slim backend
@@ -69,3 +70,4 @@
 ;; manual autocomplete
 (define-key web-mode-map (kbd "M-SPC") 'company-complete)
 (provide 'init-company-web)
+;;; init-company-web.el ends here
