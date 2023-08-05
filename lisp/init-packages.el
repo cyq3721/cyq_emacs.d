@@ -32,7 +32,7 @@
                        ;dap-mode
                        
                        ac-php
-                       flymake-php 
+                       flymake-php
                        php-mode
 		       web-completion-data
 		       which-key
@@ -55,11 +55,12 @@
                 marginalia
                 browse-kill-ring
                 pdf-tools
-	;;	go-translate
+		go-translate
 		;; --- Major Mode ---
 		;;js2-mode
 		use-package
 		web-mode
+		tern
 		htmlize
 		yasnippet
 		markdown-mode

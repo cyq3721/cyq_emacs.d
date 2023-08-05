@@ -1,3 +1,6 @@
+;;; package --- Summary
+;;; Commentary:
+;;; code:
 (require 'smartparens-config)
 (smartparens-global-mode 1)
 
@@ -16,3 +19,4 @@
 
 
 (provide 'init-smartparens)
+;;; init-smartparens.el ends here!

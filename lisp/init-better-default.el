@@ -60,7 +60,7 @@
 
 ;(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)    ;;开启括号补齐
 ;;(show-paren-mode t)
-;;(setq show-paren-style 'parentheses)    ;;括号匹配时显示另外一边的括号，而不是烦人的跳到另一个括号
+(setq show-paren-style 'parentheses)    ;;括号匹配时显示另外一边的括号，而不是烦人的跳到另一个括号
 
 ;;--------------------
 ;;不用 TAB 字符来indent, 这会引起很多奇怪的错误。
@@ -97,7 +97,7 @@
 ;;快速打开配置文件
 (defun open-my-init-file()
   (interactive)
-  (find-file "~/emacs配置文件/.emacs.d/init.el"))
+  (find-file "~/.emacs.d/init.el"))
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
 ;;--------------------
