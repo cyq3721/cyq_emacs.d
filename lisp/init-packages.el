@@ -21,6 +21,7 @@
  (defvar my/packages '(
 		;; --- Auto-completion ---
 		       company
+		       auto-complete
 		       company-quickhelp
                        company-jedi
 		       company-web
@@ -114,3 +115,4 @@
   ;; (exec-path-from-shell-initialize))
 
 (provide 'init-packages)
+;;; init-web ends here;
