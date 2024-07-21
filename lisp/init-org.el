@@ -1,4 +1,7 @@
 (require 'org)
+(require 'ox-pandoc)
+(require 'ox-pandoc)
+
 (setq org-src-fontify-natively t)      ;;org-mode引用代码时实现语法高亮
 (add-hook 'org-mode-hook   
 	  (lambda () (setq truncate-lines nil)))  ;;自动换行
@@ -11,6 +14,20 @@
 ;; 导出 md 格式
 (with-eval-after-load 'org
   (add-to-list 'org-export-backends 'md))
+;;pandoc导出
+
+;;(org-html5slide-export-to-html)
+
+;; default options for all output formats
+(setq org-pandoc-options '((standalone . t)))
+;; cancel above settings only for 'docx' format
+(setq org-pandoc-options-for-docx '((standalone . nil)))
+;; special settings for beamer-pdf and latex-pdf exporters
+(setq org-pandoc-options-for-beamer-pdf '((pdf-engine . "xelatex")))
+(setq org-pandoc-options-for-latex-pdf '((pdf-engine . "pdflatex")))
+;; special extensions for markdown_github output
+(setq org-pandoc-format-extensions '(markdown_github+pipe_tables+raw_html))
+
 
 ;;-------不关闭中文输入法输入*和-------
 (defun org-mode-my-init ()

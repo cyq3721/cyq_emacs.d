@@ -27,7 +27,8 @@
 (global-hl-line-mode t)             ;;高亮当前行
 (global-font-lock-mode t)        ;;进行语法加亮
 (delete-selection-mode 1)           ;;删除和替换选中部分
-(global-linum-mode t)                ;;全局开启行号
+;(global-linum-mode t)                ;;全局开启行号
+(global-display-line-numbers-mode 1)
 (electric-indent-mode t)             ;;回车自动缩进
 (delete-selection-mode t)            ;;开启选中替换，选中删除
 ;;(global-hungry-delete-mode t)

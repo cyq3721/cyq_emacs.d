@@ -20,28 +20,28 @@
  ;; Add Packages
  (defvar my/packages '(
 		;; --- Auto-completion ---
-		       company
-		       company-quickhelp
-                       company-jedi
-		       company-web
-                       company-php
-                      
-                       ;lsp-mode
-                       ;lsp-treemacs
-                       ;dap-mode
+	        company
+	        company-quickhelp
+                company-jedi
+	        company-web
+                company-php
                        
-                       ac-php
-                       flymake-php 
-                       php-mode
-		       web-completion-data
-		       which-key
-		       flycheck
-                       tramp
-                       image+
-		       ;; --- Better Editor ---
-		       better-defaults
-		       popwin
-                       mmm-mode
+                ;lsp-mode
+                ;lsp-treemacs
+                ;dap-mode
+                       
+                ac-php
+                flymake-php 
+                php-mode
+	        web-completion-data
+       	        which-key
+	        flycheck
+                tramp
+                image+
+	        ;; --- Better Editor ---
+       	        better-defaults
+	        popwin
+                mmm-mode
 		hungry-delete
 		swiper
 		counsel
@@ -49,7 +49,12 @@
 		neotree
 		better-defaults
                 session
+                
                 org-bullets
+                ox-html5slide
+                ox-pandoc
+                
+                
                 embark
                 marginalia
                 browse-kill-ring
