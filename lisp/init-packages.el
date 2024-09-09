@@ -43,7 +43,7 @@
        	        better-defaults
 	        popwin
                 mmm-mode
-=======
+
 		       company
 		       auto-complete
 		       company-quickhelp
@@ -67,7 +67,7 @@
 		       better-defaults
 		       popwin
                        mmm-mode
->>>>>>> cdfef3185ae8f5d9e37cde89d9fafbee2fe2ed11
+
 		hungry-delete
 		swiper
 		counsel
@@ -120,11 +120,11 @@
 		solarized-theme
 		melancholy-theme
 		spacemacs-theme
-                                   gruvbox-theme
+                gruvbox-theme
 		zenburn-theme
                 color-theme-sanityinc-tomorrow
 		color-theme-sanityinc-solarized
-                       material-theme
+                material-theme
 		) "Default packages")
 
  (setq package-selected-packages my/packages)
