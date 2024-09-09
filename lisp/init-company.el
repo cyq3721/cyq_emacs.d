@@ -2,8 +2,8 @@
 ;;; Commentary:
 ;;; code:
 (require 'company)
-;;(require 'flycheck )
-;;(global-flycheck-mode t)
+(require 'flycheck )
+(global-flycheck-mode t)
 (require 'yasnippet)
 (company-quickhelp-mode)
 

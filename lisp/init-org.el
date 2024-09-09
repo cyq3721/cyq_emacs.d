@@ -1,9 +1,12 @@
+;;; package --- Summary
+;;; Commentary:
+;;; code:
 (require 'org)
 (require 'ox-pandoc)
 (require 'ox-pandoc)
 
 (setq org-src-fontify-natively t)      ;;org-mode引用代码时实现语法高亮
-(add-hook 'org-mode-hook   
+(add-hook 'org-mode-hook
 	  (lambda () (setq truncate-lines nil)))  ;;自动换行
 (setq org-agenda-files '("/org"))
 (global-set-key (kbd "C-c a") 'org-agenda)
@@ -57,7 +60,7 @@
 ;notes组件
   '((
 	 "org-notes"
-	 :base-directory "~/my_note(emacs版)/note/" ;设置存放.org文件位置 
+	 :base-directory "~/my_note(emacs版)/note/" ;设置存放.org文件位置
 	 :base-extension "org" ;仅处理 .org 格式文件
 	 :publishing-directory "~/my_note(emacs版)/public_html/" ;导出html文件位置
 	 :recursive t
@@ -66,10 +69,10 @@
 	 :auto-preamble t
 	 :auto-sitemap t                  ;自动生成 sitemap.org
 	 :sitemap-filename "sitemap.org"  ;默认名称
-	 :sitemap-title "Sitemap"         
+	 :sitemap-title "Sitemap"
 	 :export-creator-info nil    ;禁止在 postamble 显示"Created by Org"
 	 :export-author-info nil     ;禁止在 postamble 显示 "Author: Your Name"
-	 :auto-postamble nil         
+	 :auto-postamble nil
 	 :table-of-contents t      ;禁止生成文章目录，如果要生成，将 nil 改为 t
 	 :section-numbers t       ;禁止在段落标题前使用数字，如果使用，将 nil 改为 t
 	 :html-postamble "<p class=\"postamble\">Update time: %d.</p> " ;自定义 postamble 显示字样
@@ -88,3 +91,4 @@
 	("org" :components ("org-notes" "org-static"))
 ))
 (provide 'init-org)
+;;; init-org.el ends here

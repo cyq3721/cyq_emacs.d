@@ -20,6 +20,7 @@
  ;; Add Packages
  (defvar my/packages '(
 		;; --- Auto-completion ---
+
 	        company
 	        company-quickhelp
                 company-jedi
@@ -42,6 +43,31 @@
        	        better-defaults
 	        popwin
                 mmm-mode
+=======
+		       company
+		       auto-complete
+		       company-quickhelp
+                       company-jedi
+		       company-web
+                       company-php
+                      
+                       ;lsp-mode
+                       ;lsp-treemacs
+                       ;dap-mode
+                       
+                       ac-php
+                       flymake-php
+                       php-mode
+		       web-completion-data
+		       which-key
+		       flycheck
+                       tramp
+                       image+
+		       ;; --- Better Editor ---
+		       better-defaults
+		       popwin
+                       mmm-mode
+>>>>>>> cdfef3185ae8f5d9e37cde89d9fafbee2fe2ed11
 		hungry-delete
 		swiper
 		counsel
@@ -59,11 +85,12 @@
                 marginalia
                 browse-kill-ring
                 pdf-tools
-	;;	go-translate
+		go-translate
 		;; --- Major Mode ---
 		;;js2-mode
 		use-package
 		web-mode
+		tern
 		htmlize
 		yasnippet
 		markdown-mode
@@ -119,3 +146,4 @@
   ;; (exec-path-from-shell-initialize))
 
 (provide 'init-packages)
+;;; init-web ends here;

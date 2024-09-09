@@ -1,16 +1,22 @@
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (require 'popwin)
+(require 'hungry-delete )    ;;hungry-delete 一次性删除相同字符
+(require 'dired-x)
+
 (popwin-mode 1)                        ;;将光标自动移动到新打开的窗口
 
 ;;加载image+
 (eval-after-load 'image '(require 'image+))
-;(require 'hungry-delete )    ;;hungry-delete 一次性删除相同字符
 
-(tool-bar-mode -1)                     ;;关闭工具栏
+
+;;(tool-bar-mode -1)                     ;;关闭工具栏
 (which-key-mode t)                    ;;打开which-key-mode
 ;;(scroll-bar-mode -1)                  ;;关闭滚动条
 
 (setq track-eol t)  ;; 当光标在行尾上下移动的时候，始终保持在行尾。
-(setq linum-format "%4d \u2502 ")  ;; format line number spacing
+;;(setq linum-format "%4d \u2502 ")  ;; format line number spacing
 ;;--------------------
 ;;把这些缺省禁用的功能打开。
 (put 'set-goal-column 'disabled nil)
@@ -31,7 +37,7 @@
 (global-display-line-numbers-mode 1)
 (electric-indent-mode t)             ;;回车自动缩进
 (delete-selection-mode t)            ;;开启选中替换，选中删除
-;;(global-hungry-delete-mode t)
+(global-hungry-delete-mode t)
 (global-auto-revert-mode t)      ;;自动加载外部修改过的文件
 ;;(smex t)
 
@@ -60,11 +66,11 @@
 ;;--------------------
 ;;不用 TAB 字符来indent, 这会引起很多奇怪的错误。
 ;;编辑 Makefile 的时候也不用担心，因为 makefile-mode 会把 TAB 键设置成真正的 TAB 字符，并且加亮显示的
-(setq-default indent-tabs-mode nil)
-(setq default-tab-width 8)
-(setq tab-stop-list ())
-(loop for x downfrom 40 to 1 do
-      (setq tab-stop-list (cons (* x 4) tab-stop-list)))  
+;;(setq-default indent-tabs-mode nil)
+;;(setq default-tab-width 8)
+;;(setq tab-stop-list ())
+;;(loop for x downfrom 40 to 1 do
+  ;;    (setq tab-stop-list (cons (* x 4) tab-stop-list)))  
 ;;--------------------
 
 ;;(setq-default auto-fill-function 'do-auto-fill)  ;;Autofill in all modes;;
@@ -92,7 +98,7 @@
 ;;快速打开配置文件
 (defun open-my-init-file()
   (interactive)
-  (find-file "~/emacs配置文件/.emacs.d/init.el"))
+  (find-file "~/.emacs.d/init.el"))
 (global-set-key (kbd "<f2>") 'open-my-init-file)
 
 ;;--------------------
@@ -139,8 +145,8 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 ;;总是允许递归删除
-;;(setq dired-recursive-deletes 'always)
-;;(setq dired-recursive-deletes 'always)
+(setq dired-recursive-deletes 'always)
+
 
 ;;------------显示时间设置------------------------------
 
@@ -156,7 +162,7 @@
 (put 'dired-find-alternate-file 'disabled nil)
 ;;(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 
-(require 'dired-x)
+
 (setq dired-dwim-target t)     ;;开启两个窗口复制文件时，自动复制到另一个窗口
 
 
@@ -187,3 +193,4 @@
 (browse-kill-ring-default-keybindings)
 
 (provide 'init-better-default)
+;;; init-better-default.el ends here
